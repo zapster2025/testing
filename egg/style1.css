@@ -1,0 +1,298 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #fdfdfd);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+h3 {
+    color: #2a7ae2;
+    margin-top: 8px;
+    border-bottom: 3px solid #2a7ae2;
+    padding-bottom: 6px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Input Boxes */
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    flex: 1;
+    min-width: 120px;
+    font-weight: 600;
+    background: #e0e7ff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #2a2a2a;
+    transition: background 0.3s ease;
+}
+.input-box label:hover {
+    background: #c7d2fe;
+}
+
+.input-box input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9fafb;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.input-box input:focus {
+    border-color: #2a7ae2;
+    background: #eef2ff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(42, 122, 226, 0.3);
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+table:hover {
+    transform: scale(1.01);
+}
+
+th, td {
+    border: 1px solid #eee;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+th {
+    background: linear-gradient(135deg, #2a7ae2, #5a95f5);
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fbff;
+}
+
+tr:hover {
+    background-color: #eaf2ff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Number Input */
+input[type="number"] {
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    appearance: textfield;
+    padding: 5px;
+    background: transparent;
+    transition: background 0.2s;
+}
+input[type="number"]:focus {
+    background: #fff7e6;
+    outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Buttons */
+.clear-btn {
+    background: linear-gradient(135deg, #ff7675, #e53935);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s ease;
+    box-shadow: 0 3px 8px rgba(229, 57, 53, 0.3);
+}
+.clear-btn:hover {
+    background: linear-gradient(135deg, #e53935, #b71c1c);
+    transform: scale(1.05);
+}
+
+/* Highlighted Results */
+#totalOutput {
+    background: linear-gradient(135deg, #e53935, #ff7043);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 1px;
+    font-size: 16px;
+    border: none;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 3px 8px rgba(229, 57, 53, 0.3);
+}
+
+#differenceDisplay {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #2e7d32;
+  
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+#messageDisplay {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Broken Eggs Highlight */
+#totalBrokenCase,
+#totalBrokenTray,
+#totalBrokenPieces,
+#totalBrokenEggs {
+    color: #d32f2f;
+    font-weight: bold;
+    background: #ffebee;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* Quotes */
+#egg-quote {
+    transition: opacity 0.5s ease-in-out;
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 30px;
+    color: #444;
+    font-style: italic;
+    padding: 10px;
+    border-left: 3px solid #2a7ae2;
+    background: #f1f5ff;
+    border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .input-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    .clear-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    input[type="number"] {
+        font-size: 14px;
+    }
+
+    #differenceDisplay {
+        font-size: 13px;
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Icons inside buttons */
+.clear-btn i {
+    margin-right: 6px;
+}
+
+/* Totals with icons */
+#totalOutput i {
+    margin-right: 6px;
+}
+
+#differenceDisplay i {
+    margin-right: 6px;
+}
+
+/* Broken Egg Badges */
+#totalBrokenCase i,
+#totalBrokenTray i,
+#totalBrokenPieces i,
+#totalBrokenEggs i {
+    margin-right: 4px;
+    color: #b71c1c;
+}
+
+/* Quote icon */
+#egg-quote i {
+    margin-right: 6px;
+    color: #2a7ae2;
+}

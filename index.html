@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETANS Egg Tools</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .container {
+        flex: 1;
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 5px;
+        font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+    p {
+        color: #555;
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        margin-bottom: 20px;
+    }
+    img.logo {
+        max-width: 180px;
+        margin: 10px auto 20px;
+        display: block;
+    }
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    .card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #2c3e50;
+    }
+    .card-desc {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    footer {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #555;
+        padding: 15px 10px;
+        background: #f1f1f1;
+        border-top: 1px solid #ddd;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img src="logo.jpg" alt="ETANS Logo" class="logo">
+    <h1>ETANS EGG MANAGEMENT TOOLS</h1>
+    <p>Choose a tool to manage and analyze egg production efficiently.</p>
+
+    <div class="card-container">
+        <div class="card" onclick="window.location.href='combination/index.html'">
+            <div class="card-icon">🥚</div>
+            <div class="card-title">Egg Combination</div>
+            <div class="card-desc">View and combine egg production data across all buildings for quick summaries.</div>
+        </div>
+
+        <div class="card" onclick="window.location.href='egg/index.html'">
+            <div class="card-icon">📊</div>
+            <div class="card-title">Egg Size Summary Checker</div>
+            <div class="card-desc">Analyze egg sizes, calculate percentages, and detect inconsistencies instantly.</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    For E.L TAN FARM use only | All Rights Reserved 2025<br>
+    Developed by Kenneth Q. Ortega
+</footer>
+
+</body>
+</html>

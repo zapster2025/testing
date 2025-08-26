@@ -1,0 +1,168 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+/* Control Bar */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: linear-gradient(to right, #2b5876, #4e4376);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.controls h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+}
+.controls img {
+    border-radius: 6px;
+    margin-left: 10px;
+}
+.controls button {
+    background: #ff9800;
+    border: none;
+    padding: 8px 14px;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.controls button:hover {
+    background: #e68900;
+}
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    padding: 0px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+thead th {
+    background: #37474f;
+    color: white;
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.9rem;
+}
+tbody td {
+    border: 1.5px solid red;
+    text-align: center;
+    padding: 6px;
+}
+tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+tbody tr:hover {
+    background: #e3f2fd;
+}
+
+/* Sticky First Column */
+.sticky-col {
+    position: sticky;
+    left: 0;
+    background: #f4f6f8;
+    z-index: 2;
+    font-weight: bold;
+}
+
+/* Inputs in Table */
+input[type="number"] {
+    width: 70px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Special Rows */
+#sumRow {
+    background: #ffc107;
+    font-weight: bold;
+}
+#simplifiedRow {
+    background: #ffecb3;
+    font-weight: bold;
+}
+
+/* Hide Button */
+.hide-btn {
+    background: #e53935;
+    border: none;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.hide-btn:hover {
+    background: #c62828;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+.nav-buttons button {
+    background: #1976d2;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.nav-buttons button:hover {
+    background: #1565c0;
+}
+
+/* Responsive: Smaller devices */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .controls h1 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    table {
+        min-width: 900px;
+    }
+}
+
+/* Remove arrows in number inputs (Chrome, Safari, Edge, Opera) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove arrows in number inputs (Firefox) */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
