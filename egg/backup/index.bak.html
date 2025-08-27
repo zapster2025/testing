@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Size Summary</title>
+	
+
+ <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+
+
+    <div class="container">
+	<img src="logo.jpg" alt="Company Logo" width="310" height="95">
+
+        <h3>BUILDING EGG PRODUCTION</h3>
+<script>
+        function showDateAndDay() {
+            const date = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("dateDisplay").innerHTML = date.toLocaleDateString("en-US", options);
+        }
+    </script>
+</head>
+<body onload="showDateAndDay()">
+   <p> <B id="dateDisplay"></B></p>
+        <div class="input-box">
+            <label>CASE: <input type="number" id="caseInput" oninput="calculateTotals()" min="0"></label>
+            <label>TRAYS: <input type="number" id="trayInput" oninput="calculateTotals()" min="0"></label>
+            <label>TOTAL: <input type="number" id="totalOutput" readonly></label>
+			</div>
+		
+<table id=brokeneggs>
+    <thead>
+        <tr>
+            <th></th>
+            <th>CASE</th>
+            <th>TRAYS</th>
+            <th>PIECES</th>
+            <th>TOTAL PIECES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>GOOD CRACKS</b></td>
+            <td><input type="number" id="bcaseInput" oninput="calculateTotals()" min="0"></td>
+            <td><input type="number" id="btrayInput" oninput="calculateTotals()" min="0"></td>
+            <td><input type="number" id="bpiecesInput" oninput="calculateTotals()" min="0"></td>
+            <td><input type="number" id="btotalPieces" readonly></td>
+        </tr>
+        <tr>
+            <td><b>BAD CRACKS</b></td>
+            <td><input type="number" id="bbcaseInput" oninput="calculateTotals()" min="0"></td>
+            <td><input type="number" id="bbtrayInput" oninput="calculateTotals()" min="0"></td>
+            <td><input type="number" id="bbpiecesInput" oninput="calculateTotals()" min="0"></td>
+            <td><input type="number" id="bbtotalPieces" readonly></td>
+        </tr>
+        <tr>
+            <td><b style="color: red;">TOTAL BROKEN EGGS</b></td>
+            <td><input type="number" id="totalBrokenCase" readonly></td>
+            <td><input type="number" id="totalBrokenTray" readonly></td>
+            <td><input type="number" id="totalBrokenPieces" readonly></td>
+            <td><input type="number" id="totalBrokenEggs" readonly></td>
+        </tr>
+    </tbody>
+</table>
+
+<div id="messageDisplay" style="font-weight: bold; margin-top: 10px;"></div>
+
+        <div id="differenceDisplay"></div> <!-- Difference display added -->
+<br>
+        <table>
+            <thead>
+                <tr>
+                    <th>SIZE</th>
+                    <th>TOTAL PIECES</th>
+                    <th>PERCENTAGE (%)</th>
+                    <th>
+                        <b style="color: blue;">CASES <br>
+                        <button class="clear-btn" onclick="clearColumnValues('cases')">DELETE</button>
+                    </th>
+                    <th>
+                        <b style="color: blue;">TRAYS <br>
+                        <button class="clear-btn" onclick="clearColumnValues('trays')">DELETE</button>
+                    </th>
+                    <th>
+                       <b style="color: blue;"> PIECES <br>
+                        <button class="clear-btn" onclick="clearColumnValues('pieces')">DELETE</button>
+                    </th>
+                </tr>
+            </thead>
+            <H3>ETANS EGG SIZE SUMARRY CHECKER</H3>
+			<MARQUEE><b style="color: GREEN;"><B>Huwag kalimutan isulat ang building egg production, broken eggs at loss sa hard copy.</B></MARQUEE>
+            <tbody id="tableBody">
+
+                
+                <script>
+                    const sizes = [
+                        "NNV", "NO VALUE", "NO WEIGHT", "PULLET", "PEEWEE", "SMALL",
+                        "MEDIUM", "LARGE", "X-LARGE", "JUMBO", "S-JUMBO",
+                        "BROKEN", "BOLD", "LOSS"
+                    ];
+
+                    sizes.forEach(size => {
+                        let percentageField = (size === "BOLD") ? '<td rowspan="2"><input type="number" id="boldLossPercentage" readonly></td>' : 
+                                           (size === "LOSS") ? "" : '<td><input type="number" class="percentageRow" readonly></td>';
+
+                        document.write(`
+                            <tr>
+                                <td>${size}</td>
+                                <td><input type="number" class="totalPiecesRow" readonly></td>
+                                ${percentageField}
+                                <td><input type="number" class="cases" oninput="calculateTotals()" min="0"></td>
+                                <td><input type="number" class="trays" oninput="calculateTotals()" min="0"></td>
+                                <td><input type="number" class="pieces" oninput="calculateTotals()" min="0"></td>
+                            </tr>
+                        `);
+                    });
+
+                    document.write(`
+                        <tr>
+                            <td>TOTAL</td>
+                            <td><input type="number" id="grandTotalPieces" readonly></td>
+                            <td><input type="number" id="totalPercentage" readonly></td>
+                            <td><input type="number" id="totalCases" readonly></td>
+                            <td><input type="number" id="totalTrays" readonly></td>
+                            <td><input type="number" id="totalPieces" readonly></td>
+                        </tr>
+                    `);
+
+</script>
+	 <script src="egg.js"></script>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</body><BR>
+<CENTER>
+ <button onclick="window.location.href='https://etans-eggroom.netlify.app/index.html'">BACK TO HOME</button><BR>
+
+<b style="color: blue;">For E.L TAN FARM use only<br> Alrights Reserved 2025</b\><br><br>
+<footer>Developed by Kenneth Q. Ortega</footer>
+</CENTER>
+</html>
+
+
